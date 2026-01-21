@@ -5,7 +5,7 @@
  * enabling AI agents to interact with advertising platforms through unified interfaces.
  *
  * @version 2.6.0
- * @see https://docs.adcontextprotocol.org
+ * @see https://docs.adcontextprotocol.org/docs/intro
  */
 
 // Core types and utilities

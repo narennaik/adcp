@@ -1,6 +1,6 @@
 # AdCP - Ad Context Protocol
 
-[![Version](https://img.shields.io/badge/version-2.6.0-blue.svg)](https://github.com/narennaik/adcp)
+[![Version](https://img.shields.io/badge/version-2.6.0-blue.svg)](https://github.com/inmobi-marketing/adcp)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
 
@@ -60,7 +60,7 @@ The protocol is designed to work with both human operators and autonomous AI age
 
 ```bash
 # Clone the repository
-git clone https://github.com/narennaik/adcp.git
+git clone https://github.com/inmobi-marketing/adcp.git
 cd adcp
 
 # Install dependencies
