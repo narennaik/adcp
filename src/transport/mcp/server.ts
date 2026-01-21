@@ -109,7 +109,17 @@ export class McpServer {
     try {
       switch (request.method) {
         case 'initialize':
-          return this.createResponse(request.id, this.getServerInfo());
+          // Return MCP protocol-compliant initialize response
+          return this.createResponse(request.id, {
+            protocolVersion: '2024-11-05',
+            capabilities: {
+              tools: {},
+            },
+            serverInfo: {
+              name: this.config.name,
+              version: this.config.version,
+            },
+          });
 
         case 'tools/list':
           return this.createResponse(request.id, { tools: this.listTools() });

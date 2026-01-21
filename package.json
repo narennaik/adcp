@@ -4,13 +4,17 @@
   "description": "Ad Context Protocol - Open standard for advertising automation over MCP and A2A protocols",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "adcp": "./dist/stdio-server.js"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
     "test": "vitest",
     "lint": "eslint src --ext .ts",
     "start": "node dist/index.js",
-    "server": "node dist/test-server.js"
+    "server": "node dist/test-server.js",
+    "stdio": "node dist/stdio-server.js"
   },
   "keywords": [
     "advertising",

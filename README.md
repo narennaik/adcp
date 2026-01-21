@@ -72,7 +72,37 @@ npm run build
 
 ## Quick Start
 
-### Start the Test Server
+### Claude Desktop Integration
+
+AdCP can run as an MCP server directly in Claude Desktop via stdio transport.
+
+**1. Build the project:**
+
+```bash
+npm install
+npm run build
+```
+
+**2. Configure Claude Desktop:**
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "adcp": {
+      "command": "node",
+      "args": ["/path/to/adcp/dist/stdio-server.js"]
+    }
+  }
+}
+```
+
+**3. Restart Claude Desktop**
+
+The AdCP tools will appear in Claude Desktop's tools menu, providing access to all 14 advertising automation tools.
+
+### Start the HTTP Test Server
 
 ```bash
 npm run server
@@ -283,6 +313,17 @@ const response = await server.handleTask({
 });
 ```
 
+## NPM Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run build` | Compile TypeScript to JavaScript |
+| `npm run dev` | Watch mode for development |
+| `npm run server` | Start HTTP test server on port 3000 |
+| `npm run stdio` | Start stdio server for Claude Desktop |
+| `npm run test` | Run test suite |
+| `npm run lint` | Run ESLint |
+
 ## Configuration
 
 ### Environment Variables
@@ -409,7 +450,8 @@ adcp/
 │   ├── utils/                # Utility modules
 │   │   └── capability-discovery.ts # adagents.json handling
 │   ├── index.ts              # Main exports
-│   └── test-server.ts        # Development server
+│   ├── test-server.ts        # HTTP development server
+│   └── stdio-server.ts       # Stdio server for Claude Desktop
 ├── docs/                     # Documentation
 ├── dist/                     # Compiled output
 ├── package.json

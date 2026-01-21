@@ -126,6 +126,17 @@ The transport layer handles all communication with external clients. It provides
   - SSE streaming for real-time updates
   - Webhook support
 
+#### Stdio Server (`src/stdio-server.ts`)
+
+- **Purpose**: Enables Claude Desktop integration via stdio transport
+- **Protocol**: JSON-RPC 2.0 over stdin/stdout
+- **Key Features**:
+  - Newline-delimited JSON messages
+  - Handles MCP protocol handshake (initialize, notifications/initialized)
+  - Routes requests to McpServer
+  - Logs to stderr to avoid interfering with JSON-RPC
+- **Usage**: Configure in Claude Desktop's `claude_desktop_config.json`
+
 ### Protocol Layer
 
 The protocol layer implements the business logic for each AdCP protocol.
